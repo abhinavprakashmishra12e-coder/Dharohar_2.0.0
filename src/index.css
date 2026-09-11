@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Outfit', sans-serif;
+    color: #1e293b;
+    background-color: #e2f0fb;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-cinzel {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Atmospheric Floating Animations matching reference image */
+@keyframes floatIsland {
+  0%, 100% {
+    transform: translateY(0px) rotateX(16deg) rotateZ(-3deg);
+  }
+  50% {
+    transform: translateY(-8px) rotateX(17.5deg) rotateZ(-2.5deg);
+  }
+}
+
+@keyframes cloudDriftSlow {
+  0% {
+    transform: translateX(-40px) translateY(0px);
+  }
+  50% {
+    transform: translateX(60px) translateY(-6px);
+  }
+  100% {
+    transform: translateX(-40px) translateY(0px);
+  }
+}
+
+@keyframes cloudDriftFast {
+  0% {
+    transform: translateX(50px) translateY(0px);
+  }
+  50% {
+    transform: translateX(-50px) translateY(8px);
+  }
+  100% {
+    transform: translateX(50px) translateY(0px);
+  }
+}
+
+@keyframes riverFlow {
+  0% {
+    stroke-dashoffset: 80;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.18);
+  }
+}
+
+@keyframes rotateRadar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-float-island {
+  animation: floatIsland 8s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.animate-cloud-slow {
+  animation: cloudDriftSlow 28s ease-in-out infinite;
+}
+
+.animate-cloud-fast {
+  animation: cloudDriftFast 20s ease-in-out infinite;
+}
+
+.animate-river {
+  stroke-dasharray: 8 6;
+  animation: riverFlow 3s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+.animate-radar-sweep {
+  animation: rotateRadar 5s linear infinite;
+  transform-origin: center;
+}
+
+/* Custom 3D perspective wrapper */
+.perspective-1000 {
+  perspective: 1200px;
+}
+
+/* Glassmorphism card backdrops for light sky theme */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.03);
+}
+
+.glass-panel-gold {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(254, 250, 240, 0.88) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 18px 40px -12px rgba(245, 158, 11, 0.18), 0 6px 16px rgba(15, 23, 42, 0.05);
+}
+
+/* Custom scrollbars for light theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(226, 232, 240, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.5);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.8);
+}

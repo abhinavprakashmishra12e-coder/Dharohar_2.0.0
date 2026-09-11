@@ -1,0 +1,6 @@
+{
+  "name": "Dharohar - Cultural Heritage Discovery",
+  "description": "Interactive 3D cultural heritage discovery platform with state relief maps, 360° virtual monument galleries, and geolocation landmark tracking.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
