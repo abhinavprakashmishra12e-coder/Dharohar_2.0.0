@@ -571,7 +571,44 @@ export const IndiaReliefMap: React.FC<IndiaReliefMapProps> = ({
                     <title>Meenakshi Amman Temple (Click for 360° Tour)</title>
                   </g>
 
-                  {/* 5. KONARK SUN TEMPLE (Odisha - Position x=470, y=440) */}
+                  {/* 5. HAMPI RUINS (Karnataka - South expansion) */}
+                  <g 
+                    id="mini-hampi" 
+                    transform="translate(335, 640) scale(1)"
+                    className="cursor-pointer group"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      const hampi = HERITAGE_LANDMARKS.find((l) => l.id === 'hampi');
+                      if (hampi) onLaunchLandmark360(hampi);
+                    }}
+                  >
+                    <rect x="-8" y="-8" width="16" height="16" fill="#f59e0b" stroke="#b45309" strokeWidth="0.8" rx="1" />
+                    <line x1="-5" y1="-8" x2="-5" y2="8" stroke="#a16207" strokeWidth="1" />
+                    <line x1="0" y1="-8" x2="0" y2="8" stroke="#a16207" strokeWidth="1" />
+                    <line x1="5" y1="-8" x2="5" y2="8" stroke="#a16207" strokeWidth="1" />
+                    <circle cx="0" cy="-12" r="1.8" fill="#fef3c7" stroke="#fbbf24" strokeWidth="0.6" />
+                    <title>Hampi Ruins (Click for 360° Tour)</title>
+                  </g>
+
+                  {/* 6. MYSORE PALACE (Karnataka - South expansion) */}
+                  <g 
+                    id="mini-mysore-palace" 
+                    transform="translate(305, 695) scale(1)"
+                    className="cursor-pointer group"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      const palace = HERITAGE_LANDMARKS.find((l) => l.id === 'mysore-palace');
+                      if (palace) onLaunchLandmark360(palace);
+                    }}
+                  >
+                    <rect x="-10" y="-4" width="20" height="12" fill="#f8fafc" stroke="#cbd5e1" strokeWidth="0.8" rx="1" />
+                    <path d="M -6 -4 L -6 -14 L -2 -14 L -2 -4 Z" fill="#f8fafc" stroke="#cbd5e1" strokeWidth="0.8" />
+                    <path d="M 6 -4 L 6 -14 L 2 -14 L 2 -4 Z" fill="#f8fafc" stroke="#cbd5e1" strokeWidth="0.8" />
+                    <path d="M -2 -15 C -2 -18, 2 -18, 2 -15 L 2 -14 L -2 -14 Z" fill="#fbbf24" stroke="#d97706" strokeWidth="0.8" />
+                    <title>Mysore Palace (Click for 360° Tour)</title>
+                  </g>
+
+                  {/* 7. KONARK SUN TEMPLE (Odisha - Position x=470, y=440) */}
                   <g 
                     id="mini-konark" 
                     transform="translate(470, 440) scale(0.95)"
@@ -589,7 +626,7 @@ export const IndiaReliefMap: React.FC<IndiaReliefMapProps> = ({
                     <title>Konark Sun Temple (Click for 360° Tour)</title>
                   </g>
 
-                  {/* 6. VICTORIA MEMORIAL (Kolkata - Position x=535, y=365) */}
+                  {/* 8. VICTORIA MEMORIAL (Kolkata - Position x=535, y=365) */}
                   <g 
                     id="mini-victoria" 
                     transform="translate(535, 365) scale(0.95)"

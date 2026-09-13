@@ -27,6 +27,14 @@ const FEATURED: Featured[] = [
   { id: 'golden-temple', label: 'Sri Harmandir Sahib', map: { x: 185, y: 155 }, offset: [-155, -52] },
   { id: 'hawa-mahal', label: 'Hawa Mahal', map: { x: 195, y: 245 }, offset: [-158, 30] },
   { id: 'amber-fort', label: 'Amber Fort', map: { x: 230, y: 285 }, offset: [65, 50] },
+  { id: 'qutub-minar', label: 'Qutub Minar', map: { x: 252, y: 210 }, offset: [35, -45] },
+  { id: 'khajuraho-temples', label: 'Khajuraho Temples', map: { x: 330, y: 330 }, offset: [40, -18] },
+  { id: 'sanchi-stupa', label: 'Sanchi Stupa', map: { x: 305, y: 360 }, offset: [-120, -10] },
+  { id: 'gateway-of-india', label: 'Gateway of India', map: { x: 320, y: 500 }, offset: [45, 52] },
+  { id: 'meenakshi-temple', label: 'Meenakshi Temple', map: { x: 265, y: 700 }, offset: [15, 26] },
+  { id: 'konark-sun-temple', label: 'Konark Sun Temple', map: { x: 470, y: 440 }, offset: [45, 18] },
+  { id: 'hampi', label: 'Hampi Ruins', map: { x: 330, y: 655 }, offset: [16, 20] },
+  { id: 'mysore-palace', label: 'Mysore Palace', map: { x: 305, y: 695 }, offset: [58, 10] },
 ];
 
 function mapPoint(x: number, y: number, height = 0.2): THREE.Vector3 {

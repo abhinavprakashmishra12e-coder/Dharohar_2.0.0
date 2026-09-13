@@ -261,5 +261,173 @@ export const HERITAGE_LANDMARKS: Landmark[] = [
       "Assi & Manikarnika Sacred Ghats"
     ],
     "elevationMeters": 80
+  },
+  {
+    "id": "qutub-minar",
+    "name": "Qutub Minar",
+    "hindiName": "कुतुब मीनार",
+    "stateId": "delhi",
+    "stateName": "Delhi",
+    "coords": {
+      "lat": 28.5245,
+      "lng": 77.1855
+    },
+    "mapPosition": {
+      "x": 252,
+      "y": 210
+    },
+    "yearBuilt": "1193 - 1368 CE",
+    "architecturalStyle": "Indo-Islamic Tower Architecture (Red Sandstone and Marble)",
+    "description": "Qutub Minar rises as one of the finest examples of early Indo-Islamic architecture, built in five distinct storeys with intricate calligraphy, geometric motifs, and decorative inlay work.",
+    "historicalSignificance": "A UNESCO World Heritage Site and one of Delhi’s most iconic ancient monuments, representing the arrival of Islamic architecture in the Indian subcontinent.",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80",
+    "category": "Monument",
+    "keyHighlights": [
+      "Five tapering storeys",
+      "Intricate Arabic inscriptions",
+      "Iron pillar complex nearby",
+      "UNESCO-listed heritage monument"
+    ],
+    "elevationMeters": 72
+  },
+  {
+    "id": "khajuraho-temples",
+    "name": "Khajuraho Temples",
+    "hindiName": "खजुराहो मंदिर",
+    "stateId": "madhya-pradesh",
+    "stateName": "Madhya Pradesh",
+    "coords": {
+      "lat": 24.8539,
+      "lng": 79.9198
+    },
+    "mapPosition": {
+      "x": 330,
+      "y": 330
+    },
+    "yearBuilt": "950 - 1050 CE",
+    "architecturalStyle": "Nagara Temple Architecture with Sculptural Ornamentation",
+    "description": "The Khajuraho group of temples is renowned for their exceptional sculptural detail, expressive carvings, and elegant temple planning in the heart of Central India.",
+    "historicalSignificance": "A UNESCO World Heritage Site, these temples celebrate artistic, spiritual, and philosophical traditions through a remarkable language of stone sculpture.",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1609188993948-4cdb0c43d93c?auto=format&fit=crop&w=800&q=80",
+    "category": "Temple",
+    "keyHighlights": [
+      "Temple complex with diverse deities",
+      "Masterful stone carving",
+      "UNESCO world heritage site",
+      "Architecture of the Chandela dynasty"
+    ],
+    "elevationMeters": 260
+  },
+  {
+    "id": "sanchi-stupa",
+    "name": "Sanchi Stupa",
+    "hindiName": "साँची स्तूप",
+    "stateId": "madhya-pradesh",
+    "stateName": "Madhya Pradesh",
+    "coords": {
+      "lat": 23.4821,
+      "lng": 77.7389
+    },
+    "mapPosition": {
+      "x": 305,
+      "y": 360
+    },
+    "yearBuilt": "3rd Century BCE - 12th Century CE",
+    "architecturalStyle": "Buddhist Stupa Architecture with Toranas",
+    "description": "Sanchi Stupa is one of the oldest and most revered Buddhist monuments in India, marked by its hemispherical dome, carved gateways, and sacred meditative calm.",
+    "historicalSignificance": "A UNESCO World Heritage Site, it stands as a key early monument of Buddhist architecture and the spread of Buddhist thought through the subcontinent.",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1590341328520-63256eb7f3ef?auto=format&fit=crop&w=800&q=80",
+    "category": "Stupa",
+    "keyHighlights": [
+      "Buddhist relic chamber",
+      "Decorated toranas",
+      "Ancient stone railings",
+      "UNESCO heritage monument"
+    ],
+    "elevationMeters": 445
+  },
+  {
+    "id": "gateway-of-india",
+    "name": "Gateway of India",
+    "hindiName": "भारत का प्रवेश द्वार",
+    "stateId": "maharashtra",
+    "stateName": "Maharashtra",
+    "coords": {
+      "lat": 18.9218,
+      "lng": 72.8345
+    },
+    "mapPosition": {
+      "x": 320,
+      "y": 500
+    },
+    "yearBuilt": "1911 CE",
+    "architecturalStyle": "Indo-Saracenic Triumphal Architecture",
+    "description": "The Gateway of India stands on the waterfront of Mumbai as an enduring monument of colonial-era architecture and a symbol of India’s movement into a new chapter of history.",
+    "historicalSignificance": "It commemorates the visit of King George V and Queen Mary, and later became a symbolic departure point for British rule in India.",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=800&q=80",
+    "category": "Memorial",
+    "keyHighlights": [
+      "Waterfront architecture",
+      "Colonial heritage landmark",
+      "Historic ceremonial gate",
+      "Mumbai city icon"
+    ],
+    "elevationMeters": 6
+  },
+  {
+    "id": "hampi",
+    "name": "Hampi Ruins",
+    "hindiName": "हम्पी",
+    "stateId": "karnataka",
+    "stateName": "Karnataka",
+    "coords": {
+      "lat": 15.335,
+      "lng": 76.46
+    },
+    "mapPosition": {
+      "x": 335,
+      "y": 640
+    },
+    "yearBuilt": "14th - 16th Century CE",
+    "architecturalStyle": "Vijayanagara Ruins & Temple Architecture",
+    "description": "Hampi was once the imperial capital of the Vijayanagara Empire, spread across a vast granite landscape of temples, royal enclosures, bazaar streets, and sacred tanks.",
+    "historicalSignificance": "A UNESCO World Heritage Site, Hampi is one of India’s greatest archaeological landscapes and a living reminder of the grandeur of the Deccan kingdoms.",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=800&q=80",
+    "category": "Temple",
+    "keyHighlights": [
+      "Vijayanagara imperial ruins",
+      "Granite temple architecture",
+      "Sacred tanks and bazaars",
+      "UNESCO heritage landscape"
+    ],
+    "elevationMeters": 467
+  },
+  {
+    "id": "mysore-palace",
+    "name": "Mysore Palace",
+    "hindiName": "मैसूर महल",
+    "stateId": "karnataka",
+    "stateName": "Karnataka",
+    "coords": {
+      "lat": 12.3051,
+      "lng": 76.6551
+    },
+    "mapPosition": {
+      "x": 305,
+      "y": 695
+    },
+    "yearBuilt": "1912 CE (rebuilt)",
+    "architecturalStyle": "Indo-Saracenic Palace Architecture with Gothic Influences",
+    "description": "Mysore Palace, one of the largest palaces in India, is celebrated for its grand halls, bright domes, and regal ceremonial spaces rich with royal heritage.",
+    "historicalSignificance": "The palace remains a living symbol of the Wadiyar dynasty and a major center of royal tradition, culture, and public celebration in Karnataka.",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1605857575011-dcb9f2d5ebf9?auto=format&fit=crop&w=800&q=80",
+    "category": "Fort & Palace",
+    "keyHighlights": [
+      "Grand ceremonial halls",
+      "Gilded architecture",
+      "Royal Wadiyar legacy",
+      "Festival decorated palace"
+    ],
+    "elevationMeters": 760
   }
 ];

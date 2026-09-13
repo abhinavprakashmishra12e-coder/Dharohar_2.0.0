@@ -45,4 +45,4 @@ export const TOUR_SOURCES: Record<string, TourSource> = {
   },
 };
 
-export const FEATURED_IDS = ['taj-mahal', 'golden-temple', 'hawa-mahal', 'amber-fort'];
+export const FEATURED_IDS = ['taj-mahal', 'golden-temple', 'hawa-mahal', 'amber-fort', 'meenakshi-temple', 'konark-sun-temple', 'qutub-minar', 'khajuraho-temples', 'sanchi-stupa', 'gateway-of-india', 'hampi', 'mysore-palace'];

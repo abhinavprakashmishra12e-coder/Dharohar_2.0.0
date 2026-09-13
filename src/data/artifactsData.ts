@@ -196,5 +196,117 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
         explanation: 'Painted with almond-shaped, wide open eyes symbolizing the divine gaze (darshan) blessing the devotee.'
       }
     ]
+  },
+  {
+    id: 'qutub-minar-panel',
+    name: 'Qutub Minar Inscribed Sandstone Panel',
+    hindiName: 'कुतुब मीनार पत्थर का अभिलेखित पैनल',
+    dynasty: 'Delhi Sultanate',
+    period: 'Early Medieval India',
+    circa: 'c. 1193–1220 CE',
+    originLocation: 'Qutub Complex, Delhi',
+    stateId: 'delhi',
+    material: 'Red Sandstone with Calligraphic Inlay',
+    dimensions: '86 cm × 54 cm',
+    discoveredAt: 'Qutub Minar Archaeological Complex',
+    currentLocation: 'National Museum, New Delhi (Islamic Art Wing)',
+    description: 'A masterfully carved sandstone panel from the Qutub complex, preserving the early language of Islamic ornament and calligraphy in India.',
+    culturalSignificance: 'This fragment highlights how Delhi’s early sultanate architecture married Persian decorative traditions with local artisanship and monumental scale.',
+    category: 'Architectural Relic',
+    imageUrl: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80',
+    visualDetails: [
+      {
+        title: 'Calligraphic Ornament',
+        explanation: 'The inscription uses geometric balance and elegant script to transform stone into a readymade devotional and political statement.'
+      },
+      {
+        title: 'Sandstone Craft',
+        explanation: 'The panel demonstrates the high level of carving precision achieved in the early Delhi Sultanate workshops.'
+      }
+    ]
+  },
+  {
+    id: 'khajuraho-figure',
+    name: 'Khajuraho Temple Sculpted Figure',
+    hindiName: 'खजुराहो मंदिर की नक्काशीदार आकृति',
+    dynasty: 'Chandela Dynasty',
+    period: 'Medieval Northern India',
+    circa: 'c. 950–1050 CE',
+    originLocation: 'Khajuraho, Madhya Pradesh',
+    stateId: 'madhya-pradesh',
+    material: 'Buff Sandstone',
+    dimensions: '48 cm × 30 cm',
+    discoveredAt: 'Khajuraho Temple Complex',
+    currentLocation: 'Khajuraho Museum, Madhya Pradesh',
+    description: 'A sculpted temple figure from Khajuraho, embodying the refined line, sensual grace, and rhythmic modeling that define the Chandela artistic vision.',
+    culturalSignificance: 'Khajuraho’s iconography conveys devotion, cosmic energy, and the philosophical unity of life, fertility, and transcendence.',
+    category: 'Sculpture',
+    imageUrl: 'https://images.unsplash.com/photo-1609188993948-4cdb0c43d93c?auto=format&fit=crop&w=800&q=80',
+    visualDetails: [
+      {
+        title: 'Stone Silhouette',
+        explanation: 'The sculpted form captures movement and expression through a careful balance of contour and detail.'
+      },
+      {
+        title: 'Chandela Craftsmanship',
+        explanation: 'The carving reflects a highly developed temple workshop tradition that prized both aesthetics and symbolic clarity.'
+      }
+    ]
+  },
+  {
+    id: 'sanchi-torana-fragment',
+    name: 'Sanchi Stupa Torana Fragment',
+    hindiName: 'साँची स्तूप तोरण खंड',
+    dynasty: 'Mauryan and Post-Mauryan Traditions',
+    period: 'Ancient Indian Buddhist Art',
+    circa: 'c. 3rd Century BCE–1st Century CE',
+    originLocation: 'Sanchi, Madhya Pradesh',
+    stateId: 'madhya-pradesh',
+    material: 'Stone with Traces of Pigment',
+    dimensions: '58 cm × 42 cm',
+    discoveredAt: 'Great Stupa, Sanchi',
+    currentLocation: 'Sanchi Archaeological Museum, Madhya Pradesh',
+    description: 'A carved torana fragment from Sanchi, showing the early Buddhist visual language of narrative relief and sacred symbolism.',
+    culturalSignificance: 'Toranas served as ceremonial gateways and their carved scenes helped spread Buddhist stories and ideals across India, influencing later Indian temple traditions.',
+    category: 'Architectural Relic',
+    imageUrl: 'https://images.unsplash.com/photo-1590341328520-63256eb7f3ef?auto=format&fit=crop&w=800&q=80',
+    visualDetails: [
+      {
+        title: 'Narrative Stone Relief',
+        explanation: 'The carving turns sacred stories into visible pathways of faith, guiding worshippers through symbolic architecture.'
+      },
+      {
+        title: 'Stupa Gate Symbolism',
+        explanation: 'Toranas marked a threshold between worldly space and sacred presence, emphasizing devotion and transition.'
+      }
+    ]
+  },
+  {
+    id: 'mysore-palace-panel',
+    name: 'Mysore Palace Gilded Ceiling Panel',
+    hindiName: 'मैसूर महल सुवर्ण जड़ित छत पैनल',
+    dynasty: 'Wadiyar Dynasty',
+    period: 'Early Modern South India',
+    circa: 'c. 1910–1912 CE',
+    originLocation: 'Mysore Palace, Karnataka',
+    stateId: 'karnataka',
+    material: 'Wood, Gesso, Gold Leaf, Painted Stucco',
+    dimensions: '120 cm × 90 cm',
+    discoveredAt: 'Mysore Palace Interior',
+    currentLocation: 'Government Museum, Mysore, Karnataka',
+    description: 'A richly decorated palace panel from Mysore, presenting the opulence and artistic refinement of the Wadiyar royal residences.',
+    culturalSignificance: 'It reflects how palace architecture in Mysore merged local traditions with Indo-Saracenic influences, becoming a lasting image of royal craftsmanship.',
+    category: 'Architectural Relic',
+    imageUrl: 'https://images.unsplash.com/photo-1605857575011-dcb9f2d5ebf9?auto=format&fit=crop&w=800&q=80',
+    visualDetails: [
+      {
+        title: 'Gilded Detailing',
+        explanation: 'Gold leaf work and painted ornament create a layered visual richness that mirrors the palace’s ceremonial environment.'
+      },
+      {
+        title: 'Royal Patronage',
+        explanation: 'The panel demonstrates how courtly patronage transformed everyday architectural surfaces into works of art.'
+      }
+    ]
   }
 ];
