@@ -1,4 +1,5 @@
 import { MuseumArtifact } from '../types/heritage';
+import { heritageArtwork } from './artwork';
 
 export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
   {
@@ -17,7 +18,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'The supreme embodiment of Indian sculptural genius: Lord Shiva performing the Ananda Tandava (Dance of Bliss) within a fiery halo of prabhamandala, balancing the rhythms of cosmic creation, preservation, and dissolution.',
     culturalSignificance: 'Fritjof Capra and Carl Sagan famously compared the Chola Nataraja to modern subatomic quantum physics, where matter dances in continuous creation and destruction. A permanent bronze casting of this sculpture stands at CERN in Geneva.',
     category: 'Metalwork',
-    imageUrl: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80',
+    imageUrl: heritageArtwork('Chola Nataraja', 'Bronze • Cosmic dance', '#3d3e64', '#f6c65a', '#f6f1ff'),
     visualDetails: [
       {
         title: 'Damaru (Drum of Creation)',
@@ -53,7 +54,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'Four magnificent lions standing back-to-back atop an abacus sculpted with four energetic animals (Lion, Elephant, Bull, Horse) separated by 24-spoke Dharma Chakras, resting on an inverted lotus.',
     culturalSignificance: 'Adopted on 26 January 1950 as the official National Emblem of the Republic of India. The central 24-spoke Ashoka Chakra adorns the center of the Indian National Flag, symbolizing truth, righteousness, and continuous motion.',
     category: 'Sculpture',
-    imageUrl: 'https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=800&q=80',
+    imageUrl: heritageArtwork('Ashoka Lion Capital', 'Stone • National emblem', '#496a5c', '#f2c65a', '#f4f8f2'),
     visualDetails: [
       {
         title: 'Mauryan Glass-Like Polish',
@@ -85,7 +86,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'A world-famous Bronze Age masterpiece depicting a young woman standing in a dynamic, confident tribhanga pose with right hand resting on her hip and left arm stacked with 24 bangles.',
     culturalSignificance: 'Archaeologist Sir John Mortimer Wheeler remarked: "When I first saw her I found it hard to believe that it was prehistoric. She knows how to hold herself, with that insolent look... It is unprecedented in ancient art anywhere."',
     category: 'Metalwork',
-    imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80',
+    imageUrl: heritageArtwork('Dancing Girl', 'Bronze • Harappan grace', '#465d76', '#f0b55c', '#f5faff'),
     visualDetails: [
       {
         title: 'Lost-Wax Metallurgy (Cire Perdue)',
@@ -117,7 +118,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'The crowning jewel of ancient Asian painting: Bodhisattva Avalokiteshvara stands in graceful tribhanga posture holding a sacred blue lotus (utpala) in his right hand, radiating supreme compassion and peace.',
     culturalSignificance: 'Influenced Buddhist mural traditions across the Silk Road through Dunhuang (China), Sigiriya (Sri Lanka), and Horyu-ji (Japan). The three-dimensional modeling and soft shading anticipate European Renaissance chiaroscuro by a thousand years.',
     category: 'Manuscript & Painting',
-    imageUrl: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80',
+    imageUrl: heritageArtwork('Padmapani', 'Ajanta • Compassion', '#304d6a', '#efb04a', '#eef7ff'),
     visualDetails: [
       {
         title: 'The Blue Lotus (Padma)',
@@ -149,7 +150,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'An extraordinary royal dagger (khanjar) crafted from a single piece of milky-white mutton-fat jade meticulously sculpted into the head of a hooded hunting falcon, with cabochon ruby eyes mounted in pure kundan gold.',
     culturalSignificance: 'Emperor Jahangir was a legendary naturalist and connoisseur of gemstones and falcons. The blade is forged from Indian Wootz crucible steel—famed worldwide for its wavy water-pattern (jauhar) and legendary razor sharpness.',
     category: 'Jewelry',
-    imageUrl: 'https://images.unsplash.com/photo-1599818496387-34d3f44c501b?auto=format&fit=crop&w=800&q=80',
+    imageUrl: heritageArtwork('Falcon-Headed Dagger', 'Jade • Mughal court', '#6b4f38', '#e7b466', '#fef8ee'),
     visualDetails: [
       {
         title: 'Falcon Head Pummel',
@@ -181,7 +182,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'A radiant devotional icon depicting Child Krishna (Navanitha Krishna) with butter ball, seated beneath an ornate triumphal temple arch embossed with 22-karat pure gold leaf and shimmering semi-precious stones.',
     culturalSignificance: 'Tanjore painting is a unique classical art school distinguished by its high relief (gesso embossing) and glistening 22K gold foil that glows magically in oil lamp light inside temple shrines.',
     category: 'Manuscript & Painting',
-    imageUrl: 'https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=800&q=80',
+    imageUrl: heritageArtwork('Tanjore Krishna', 'Gold foil • Devotion', '#6f3d4b', '#f0c460', '#fff5f8'),
     visualDetails: [
       {
         title: '22K Gold Leaf (Warq)',
@@ -213,7 +214,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'A masterfully carved sandstone panel from the Qutub complex, preserving the early language of Islamic ornament and calligraphy in India.',
     culturalSignificance: 'This fragment highlights how Delhi’s early sultanate architecture married Persian decorative traditions with local artisanship and monumental scale.',
     category: 'Architectural Relic',
-    imageUrl: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80',
+    imageUrl: heritageArtwork('Qutub Minar Panel', 'Delhi • Stone calligraphy', '#8b4e34', '#f0ba61', '#fff5ef'),
     visualDetails: [
       {
         title: 'Calligraphic Ornament',
@@ -241,7 +242,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'A sculpted temple figure from Khajuraho, embodying the refined line, sensual grace, and rhythmic modeling that define the Chandela artistic vision.',
     culturalSignificance: 'Khajuraho’s iconography conveys devotion, cosmic energy, and the philosophical unity of life, fertility, and transcendence.',
     category: 'Sculpture',
-    imageUrl: 'https://images.unsplash.com/photo-1609188993948-4cdb0c43d93c?auto=format&fit=crop&w=800&q=80',
+    imageUrl: heritageArtwork('Khajuraho Figure', 'Stone • Chandela artistry', '#5f4d40', '#edbb69', '#fff5ef'),
     visualDetails: [
       {
         title: 'Stone Silhouette',
@@ -269,7 +270,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'A carved torana fragment from Sanchi, showing the early Buddhist visual language of narrative relief and sacred symbolism.',
     culturalSignificance: 'Toranas served as ceremonial gateways and their carved scenes helped spread Buddhist stories and ideals across India, influencing later Indian temple traditions.',
     category: 'Architectural Relic',
-    imageUrl: 'https://images.unsplash.com/photo-1590341328520-63256eb7f3ef?auto=format&fit=crop&w=800&q=80',
+    imageUrl: heritageArtwork('Sanchi Torana', 'Stone • Buddhist relief', '#4f6d61', '#e7b760', '#f4faf5'),
     visualDetails: [
       {
         title: 'Narrative Stone Relief',
@@ -297,7 +298,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'A richly decorated palace panel from Mysore, presenting the opulence and artistic refinement of the Wadiyar royal residences.',
     culturalSignificance: 'It reflects how palace architecture in Mysore merged local traditions with Indo-Saracenic influences, becoming a lasting image of royal craftsmanship.',
     category: 'Architectural Relic',
-    imageUrl: 'https://images.unsplash.com/photo-1605857575011-dcb9f2d5ebf9?auto=format&fit=crop&w=800&q=80',
+    imageUrl: heritageArtwork('Mysore Palace Panel', 'Gold leaf • Royal craft', '#4e4a72', '#e6b65d', '#f9f3ff'),
     visualDetails: [
       {
         title: 'Gilded Detailing',
