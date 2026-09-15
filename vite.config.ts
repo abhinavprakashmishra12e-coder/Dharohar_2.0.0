@@ -65,9 +65,9 @@ function aistudioMediaPlugin(): Plugin {
 // LINT.ThenChange(//depot/google3/java/com/google/alkali/boq/makersuite/applet_dev_service/templates/initializers/react_theme/vite.config.ts:aistudio_media_plugin)
 
 export default defineConfig(() => {
-  // Keep local development at the root while automatically using the
-  // repository path on GitHub Pages. A manual VITE_BASE_PATH can override it.
-  const base = process.env.VITE_BASE_PATH ?? (process.env.GITHUB_ACTIONS === 'true' ? `/${process.env.GITHUB_REPOSITORY?.split('/')[1] ?? 'Dharohar-'}/` : '/');
+  // Use a root base in local dev, but switch to a relative path during the GitHub Pages
+  // deployment pipeline so assets resolve correctly on a project site.
+  const base = process.env.VITE_BASE_PATH ?? (process.env.GITHUB_ACTIONS === 'true' ? './' : '/');
   return {
     base,
     plugins: [react(), tailwindcss(), aistudioMediaPlugin()],
