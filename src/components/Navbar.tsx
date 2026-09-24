@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, Compass, Globe2, Landmark, Map, Search, X } from 'lucide-react';
+import { ArrowUpRight, Bot, Compass, Globe2, Landmark, Map, Search, X } from 'lucide-react';
 import { INDIAN_STATES } from '../data/indiaHeritageData';
 import { HERITAGE_LANDMARKS } from '../data/landmarksData';
-type View = 'map' | 'tour' | 'radar' | 'museum' | 'trail';
+type View = 'map' | 'tour' | 'radar' | 'museum' | 'trail' | 'agent';
 interface NavbarProps { activeView: View; setActiveView: (view: View) => void; onSelectState: (id: string) => void; onSelectLandmark: (id: string) => void; }
-const tabs = [{ id: 'map' as const, label: 'Discover', icon: Map }, { id: 'tour' as const, label: '360° journeys', icon: Globe2 }, { id: 'radar' as const, label: 'Near you', icon: Compass }, { id: 'museum' as const, label: 'The museum', icon: Landmark }, { id: 'trail' as const, label: 'Heritage Trails', icon: Compass }];
+const tabs = [{ id: 'map' as const, label: 'Discover', icon: Map }, { id: 'tour' as const, label: '360° journeys', icon: Globe2 }, { id: 'radar' as const, label: 'Near you', icon: Compass }, { id: 'museum' as const, label: 'The museum', icon: Landmark }, { id: 'trail' as const, label: 'Heritage Trails', icon: Compass }, { id: 'agent' as const, label: 'Agent', icon: Bot }];
 export function Navbar({ activeView, setActiveView, onSelectState, onSelectLandmark }: NavbarProps) {
   const [open, setOpen] = useState(false), [query, setQuery] = useState('');
   const toggle = useRef<HTMLButtonElement>(null);
