@@ -18,7 +18,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'The supreme embodiment of Indian sculptural genius: Lord Shiva performing the Ananda Tandava (Dance of Bliss) within a fiery halo of prabhamandala, balancing the rhythms of cosmic creation, preservation, and dissolution.',
     culturalSignificance: 'Fritjof Capra and Carl Sagan famously compared the Chola Nataraja to modern subatomic quantum physics, where matter dances in continuous creation and destruction. A permanent bronze casting of this sculpture stands at CERN in Geneva.',
     category: 'Metalwork',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Nataraja_Bronze.jpg',
+    imageUrl: import.meta.env.BASE_URL + 'assets/museum-chola-nataraja.jpg',
     visualDetails: [
       {
         title: 'Damaru (Drum of Creation)',
@@ -54,7 +54,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'Four magnificent lions standing back-to-back atop an abacus sculpted with four energetic animals (Lion, Elephant, Bull, Horse) separated by 24-spoke Dharma Chakras, resting on an inverted lotus.',
     culturalSignificance: 'Adopted on 26 January 1950 as the official National Emblem of the Republic of India. The central 24-spoke Ashoka Chakra adorns the center of the Indian National Flag, symbolizing truth, righteousness, and continuous motion.',
     category: 'Sculpture',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/Lion_Capital_of_Ashoka.jpg',
+    imageUrl: import.meta.env.BASE_URL + 'assets/museum-ashoka-lion-capital.jpg',
     visualDetails: [
       {
         title: 'Mauryan Glass-Like Polish',
@@ -86,7 +86,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'A world-famous Bronze Age masterpiece depicting a young woman standing in a dynamic, confident tribhanga pose with right hand resting on her hip and left arm stacked with 24 bangles.',
     culturalSignificance: 'Archaeologist Sir John Mortimer Wheeler remarked: "When I first saw her I found it hard to believe that it was prehistoric. She knows how to hold herself, with that insolent look... It is unprecedented in ancient art anywhere."',
     category: 'Metalwork',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/66/Dancing_Girl_of_Mohenjo-daro.jpg',
+    imageUrl: import.meta.env.BASE_URL + 'assets/museum-dancing-girl.jpg',
     visualDetails: [
       {
         title: 'Lost-Wax Metallurgy (Cire Perdue)',
@@ -118,7 +118,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'The crowning jewel of ancient Asian painting: Bodhisattva Avalokiteshvara stands in graceful tribhanga posture holding a sacred blue lotus (utpala) in his right hand, radiating supreme compassion and peace.',
     culturalSignificance: 'Influenced Buddhist mural traditions across the Silk Road through Dunhuang (China), Sigiriya (Sri Lanka), and Horyu-ji (Japan). The three-dimensional modeling and soft shading anticipate European Renaissance chiaroscuro by a thousand years.',
     category: 'Manuscript & Painting',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Ajanta_Padshahnath.jpg',
+    imageUrl: import.meta.env.BASE_URL + 'assets/museum-padmapani.jpg',
     visualDetails: [
       {
         title: 'The Blue Lotus (Padma)',
@@ -136,33 +136,33 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
   },
   {
     id: 'mughal-falcon-dagger',
-    name: 'Jahangir’s Falcon-Headed Nephrite Jade Dagger',
-    hindiName: 'जहाँगीर की बाज मुखी जेड खंजर',
+    name: 'Jahangir’s Meteoritic-Iron Dagger',
+    hindiName: 'जहाँगीर का उल्कापिंड लौह खंजर',
     dynasty: 'Mughal Empire',
     period: 'Mughal Imperial Era',
-    circa: 'c. 1619–1625 CE',
-    originLocation: 'Agra / Lahore Royal Karkhana',
+    circa: 'c. 1621 CE',
+    originLocation: 'Mughal India',
     stateId: 'uttar-pradesh',
-    material: 'Carved White Nephrite Jade, Watered Damascus Crucible Steel (Wootz), Rubies, Gold Kundan Inlay',
+    material: 'Watered Steel, Meteoritic Iron, Iron Hilt, Gold Inlay',
     dimensions: '34 cm Total Length',
     discoveredAt: 'Mughal Imperial Treasury',
-    currentLocation: 'National Museum, New Delhi (Arms & Armour Gallery)',
-    description: 'An extraordinary royal dagger (khanjar) crafted from a single piece of milky-white mutton-fat jade meticulously sculpted into the head of a hooded hunting falcon, with cabochon ruby eyes mounted in pure kundan gold.',
-    culturalSignificance: 'Emperor Jahangir was a legendary naturalist and connoisseur of gemstones and falcons. The blade is forged from Indian Wootz crucible steel—famed worldwide for its wavy water-pattern (jauhar) and legendary razor sharpness.',
+    currentLocation: 'Freer Gallery of Art, Smithsonian Institution, Washington, D.C.',
+    description: 'A 1621 Mughal dagger associated with Emperor Jahangir, combining a watered-steel blade with meteoritic iron, an iron hilt, and gold inlay.',
+    culturalSignificance: 'The use of meteoritic iron gives this imperial weapon a rare connection between Mughal metalworking and material from beyond Earth.',
     category: 'Jewelry',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Jahangirs_Falcon_Headed_Dagger.jpg',
+    imageUrl: import.meta.env.BASE_URL + 'assets/museum-jahangir-dagger.jpg',
     visualDetails: [
       {
-        title: 'Falcon Head Pummel',
-        explanation: 'The raptor’s beak, feathers, and intense predatory gaze are carved with lifelike realism from unyielding nephrite jade.'
+        title: 'Watered-Steel Blade',
+        explanation: 'The blade displays the flowing pattern characteristic of watered steel.'
       },
       {
-        title: 'Indian Wootz Crucible Steel',
-        explanation: 'Pioneered in ancient southern India, high-carbon Wootz steel produced micro-carbide grain patterns and was coveted from Damascus to Samarkand.'
+        title: 'Meteoritic Iron',
+        explanation: 'Iron from a meteorite was incorporated into the blade, an uncommon material in imperial arms.'
       },
       {
-        title: 'Kundan Gemstone Setting',
-        explanation: 'Hyper-refined 24-karat pure gold is burnished at room temperature to grip Burma rubies without claws or prongs.'
+        title: 'Gold Inlay',
+        explanation: 'Gold inlay accents the iron hilt and adds courtly ornament to the weapon.'
       }
     ]
   },
@@ -182,7 +182,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'A radiant devotional icon depicting Child Krishna (Navanitha Krishna) with butter ball, seated beneath an ornate triumphal temple arch embossed with 22-karat pure gold leaf and shimmering semi-precious stones.',
     culturalSignificance: 'Tanjore painting is a unique classical art school distinguished by its high relief (gesso embossing) and glistening 22K gold foil that glows magically in oil lamp light inside temple shrines.',
     category: 'Manuscript & Painting',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Tanjore_painting.jpg',
+    imageUrl: import.meta.env.BASE_URL + 'assets/museum-tanjore-krishna.jpg',
     visualDetails: [
       {
         title: '22K Gold Leaf (Warq)',
@@ -214,7 +214,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'A masterfully carved sandstone panel from the Qutub complex, preserving the early language of Islamic ornament and calligraphy in India.',
     culturalSignificance: 'This fragment highlights how Delhi’s early sultanate architecture married Persian decorative traditions with local artisanship and monumental scale.',
     category: 'Architectural Relic',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Qutb_Minar_panel.jpg',
+    imageUrl: import.meta.env.BASE_URL + 'assets/museum-qutub-inscription.jpg',
     visualDetails: [
       {
         title: 'Calligraphic Ornament',
@@ -242,7 +242,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'A sculpted temple figure from Khajuraho, embodying the refined line, sensual grace, and rhythmic modeling that define the Chandela artistic vision.',
     culturalSignificance: 'Khajuraho’s iconography conveys devotion, cosmic energy, and the philosophical unity of life, fertility, and transcendence.',
     category: 'Sculpture',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/8a/Khajuraho_figure.jpg',
+    imageUrl: import.meta.env.BASE_URL + 'assets/museum-khajuraho-figure.jpg',
     visualDetails: [
       {
         title: 'Stone Silhouette',
@@ -270,7 +270,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'A carved torana fragment from Sanchi, showing the early Buddhist visual language of narrative relief and sacred symbolism.',
     culturalSignificance: 'Toranas served as ceremonial gateways and their carved scenes helped spread Buddhist stories and ideals across India, influencing later Indian temple traditions.',
     category: 'Architectural Relic',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Sanchi_Torana.jpg',
+    imageUrl: import.meta.env.BASE_URL + 'assets/museum-sanchi-torana.jpg',
     visualDetails: [
       {
         title: 'Narrative Stone Relief',
@@ -298,7 +298,7 @@ export const MUSEUM_ARTIFACTS: MuseumArtifact[] = [
     description: 'A richly decorated palace panel from Mysore, presenting the opulence and artistic refinement of the Wadiyar royal residences.',
     culturalSignificance: 'It reflects how palace architecture in Mysore merged local traditions with Indo-Saracenic influences, becoming a lasting image of royal craftsmanship.',
     category: 'Architectural Relic',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/58/Mysore_Palace_painting.jpg',
+    imageUrl: import.meta.env.BASE_URL + 'assets/museum-mysore-fresco.jpg',
     visualDetails: [
       {
         title: 'Gilded Detailing',

@@ -18,3 +18,20 @@ Bundled thumbnails are resized versions of the following Wikimedia Commons photo
 | landmark-mysore-palace.jpg | Mysore Palace | Jioganeshjio | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mysore_Palace_Mysore.jpg) |
 
 The image files are resized thumbnails. No endorsement by the photographers is implied. Museum image failures use locally generated, clearly labeled illustrations instead of being hidden.
+
+# Museum Image Credits
+
+Bundled museum gallery photographs are resized for the preview cards and inspection stage. Source page and license details are listed below.
+
+| Local file | Photograph | Creator | License and source |
+| --- | --- | --- | --- |
+| museum-chola-nataraja.jpg | Nataraja bronze, National Museum, New Delhi | Aadrit28 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Nataraja._Bronze_statue_from_12th_Century,_CE,_Tamil_Nadu.jpg) |
+| museum-ashoka-lion-capital.jpg | Lion Capital of Ashoka, Sarnath | lisa bat | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Lion_capital_of_Ashoka,_Sarnath.jpg) |
+| museum-dancing-girl.jpg | Bronze Dancing Girl, Mohenjo-daro | Gary Todd | [CC0](https://creativecommons.org/publicdomain/zero/1.0/), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Bronze_%22Dancing_Girl,%22_Mohenjo-daro,_c._2500_BC.jpg) |
+| museum-padmapani.jpg | Padmapani mural, Ajanta Caves | 9212jay | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mural_of_Padmapani_in_Ajanta_Caves._India,_5th_century.png) |
+| museum-jahangir-dagger.jpg | Meteoritic-iron dagger of Emperor Jahangir, 1621 | Daderot | [CC0](https://creativecommons.org/publicdomain/zero/1.0/), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Meteoric_iron_dagger_of_Emperor_Jahangir,_Mughal_dynasty,_1621,_India,_watered_steel_blade_with_meteoritic_iron,_iron_hilt,_and_gold_inlay_-_Freer_Gallery_of_Art_-_DSC05177.JPG) |
+| museum-tanjore-krishna.jpg | Navaneeta Krishna, Thanjavur painting | Unknown; Google Art Project | [Public domain](https://creativecommons.org/publicdomain/mark/1.0/), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Navaneeta_Krishna_-_Google_Art_Project.jpg) |
+| museum-qutub-inscription.jpg | Arabic sandstone inscription, Qutb Minar complex | Jasleen Kaur | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:An_inscription_in_Arabic_set_in_sandstone,_Qutb_Minar_complex.jpg) |
+| museum-khajuraho-figure.jpg | Sculpted figure at Lakshmana Temple, Khajuraho | Jean-Pierre Dalbéra | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Le_Temple_de_Lakshmana_(Khajur%C3%A2ho)_(8498180067).jpg) |
+| museum-sanchi-torana.jpg | East Torana carvings, Sanchi | Bernard Gagnon | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:East_Torana,_Sanchi_01.jpg) |
+| museum-mysore-fresco.jpg | Mysore-style palace ceiling frescoes, Daria Daulat Bagh | Shashank Mehendale | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:All_of_the_space_available_on_the_walls,_pillars,_canopies_and_arches_have_colorful_frescoes_in_the_style_of_Mysore_paintings_at_Daria_Daulat_Bagh,_Srirangapatna,_Karnataka.jpg) |
