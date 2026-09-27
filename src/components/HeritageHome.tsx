@@ -3,6 +3,7 @@ import { ArrowDown, ArrowRight, ArrowUpRight, Compass, Layers, Play, RotateCcw, 
 import { INDIAN_STATES } from '../data/indiaHeritageData';
 import { HERITAGE_LANDMARKS } from '../data/landmarksData';
 import { FEATURED_IDS } from '../data/tourSources';
+import { setHeritageImageFallback } from '../data/artwork';
 import type { Landmark, StateHeritage } from '../types/heritage';
 const HeritageDiorama = lazy(() => import('./HeritageDiorama').then(m => ({ default: m.HeritageDiorama })));
 const IndiaReliefMap = lazy(() => import('./IndiaReliefMap').then(m => ({ default: m.IndiaReliefMap })));
@@ -55,7 +56,7 @@ export function HeritageHome({ onSelectState, onLaunchLandmark360, onOpenRadar }
     <section className="featured-section" ref={destinations} id="destinations">
       <div className="section-heading"><div><span className="eyebrow">FOUR ICONS. COUNTLESS PERSPECTIVES.</span><h2>Where will your curiosity take you?</h2></div><span className="section-number">EXPLORE <ArrowDown size={15}/></span></div>
       <div className="featured-grid">{FEATURED_IDS.map((id, index) => { const item = HERITAGE_LANDMARKS.find(l => l.id === id)!; const badgeLabel = id === 'golden-temple' ? 'EXTERNAL 360°' : id === 'taj-mahal' ? '360° TOUR' : id === 'meenakshi-temple' ? 'SOUTH INDIA' : id === 'konark-sun-temple' ? 'SUN TEMPLE' : id === 'hampi' ? 'RUINS & RITUALS' : id === 'mysore-palace' ? 'ROYAL PALACE' : 'HERITAGE DISCOVERY'; return <button key={id} className={`monument-card card-${id}`} onClick={() => launch(id)}>
-        <div className="card-art" aria-hidden="true">{id !== 'amber-fort' && <img src={item.thumbnailUrl} alt="" loading="lazy" onError={e => { e.currentTarget.style.display = 'none'; }}/>}<span className="card-silhouette">{id === 'amber-fort' ? 'आमेर' : item.hindiName.split('(')[0]}</span><span className="card-index">0{index + 1}</span><span className="card-tour-badge">{badgeLabel}</span></div>
+        <div className="card-art" aria-hidden="true"><img src={item.thumbnailUrl} alt="" loading="lazy" onError={event => setHeritageImageFallback(event.currentTarget, item.name, item.stateName)}/><span className="card-silhouette">{id === 'amber-fort' ? 'आमेर' : item.hindiName.split('(')[0]}</span><span className="card-index">0{index + 1}</span><span className="card-tour-badge">{badgeLabel}</span></div>
         <div className="card-info"><span className="eyebrow">{item.stateName}</span><h3>{id === 'golden-temple' ? 'Sri Harmandir Sahib' : item.name}</h3><span className="card-cta">{id === 'golden-temple' ? 'Discover the sacred' : 'Explore the monument'} <ArrowUpRight size={18}/></span></div>
       </button>; })}</div>
     </section>

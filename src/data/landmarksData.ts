@@ -20,7 +20,7 @@ export const HERITAGE_LANDMARKS: Landmark[] = [
     "architecturalStyle": "Mughal Architecture (White Makrana Marble with Pietra Dura)",
     "description": "An immense mausoleum of pure white marble built in Agra by Mughal emperor Shah Jahan in memory of his beloved wife Mumtaz Mahal. It is the jewel of Muslim art in India and one of the universally admired masterpieces of the world’s heritage.",
     "historicalSignificance": "UNESCO World Heritage Site and one of the New Seven Wonders of the World. Represents the zenith of Indo-Islamic symmetry, Persian charbagh garden layout, and lapidary pietra dura stonework.",
-    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg",
+    "thumbnailUrl": import.meta.env.BASE_URL + 'assets/landmark-taj-mahal.jpg',
     "panoramicSceneId": "taj-mahal-360",
     "category": "Mausoleum",
     "keyHighlights": [
@@ -49,7 +49,7 @@ export const HERITAGE_LANDMARKS: Landmark[] = [
     "architecturalStyle": "Sikh Architecture (Blend of Rajput and Mughal styles with pure gold leaf)",
     "description": "The holiest gurdwara of Sikhism, situated in the holy city of Amritsar. Built around a man-made sacred pool (Amrit Sarovar), the sanctum is coated with over 500 kilograms of pure 24-karat gold foil donated by Maharaja Ranjit Singh.",
     "historicalSignificance": "Founded by Guru Ram Das (the 4th Sikh Guru). Features four entrances signifying open welcome to all castes, creeds, and religions. Hosts Guru ka Langar, serving over 100,000 free hot meals daily.",
-    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Golden_Temple_Amritsar.jpg",
+    "thumbnailUrl": import.meta.env.BASE_URL + 'assets/landmark-golden-temple.jpg',
     "panoramicSceneId": "golden-temple-360",
     "category": "Temple",
     "keyHighlights": [
@@ -78,7 +78,7 @@ export const HERITAGE_LANDMARKS: Landmark[] = [
     "architecturalStyle": "Rajput-Mughal Fusion (Pink and Red Sandstone with Jali Lattice)",
     "description": "The Palace of Winds in Jaipur is a five-story crown-shaped honeycomb monument with 953 miniature carved stone casements (jharokhas), engineered to funnel cool breezes and allow royal women to observe street processions unseen.",
     "historicalSignificance": "Built by Maharaja Sawai Pratap Singh, designed by Lal Chand Ustad in the form of the crown of Lord Krishna. An acoustic and aerodynamic masterpiece of passive desert cooling.",
-    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Hawa_Mahal.jpg",
+    "thumbnailUrl": import.meta.env.BASE_URL + 'assets/landmark-hawa-mahal.jpg',
     "panoramicSceneId": "hawa-mahal-360",
     "category": "Fort & Palace",
     "keyHighlights": [
@@ -107,7 +107,7 @@ export const HERITAGE_LANDMARKS: Landmark[] = [
     "architecturalStyle": "Rajput palace-fort architecture in sandstone and marble",
     "description": "Above Maota Lake, Amer Fort unfolds through gateways, courtyards, gardens, and royal halls. The hilltop palace near Jaipur is known for the ornate Ganesh Pol and the mirror decoration of the Sheesh Mahal.",
     "historicalSignificance": "Part of the Hill Forts of Rajasthan UNESCO World Heritage property. Its successive courtyards connect public ceremony with the private life of the royal household.",
-    "thumbnailUrl": import.meta.env.BASE_URL + 'assets/amber-fort.svg',
+    "thumbnailUrl": import.meta.env.BASE_URL + 'assets/landmark-amber-fort.jpg',
     "panoramicSceneId": "amber-fort-360",
     "category": "Fort & Palace",
     "keyHighlights": [
@@ -136,7 +136,7 @@ export const HERITAGE_LANDMARKS: Landmark[] = [
     "architecturalStyle": "Dravidian Architecture (Monumental Multi-Tiered Gopurams)",
     "description": "A historic Hindu temple complex located on the southern bank of the Vaigai River in Madurai. Dominating the skyline with 14 colossal gateway towers (gopurams) adorned with thousands of vibrant mythological stucco sculptures.",
     "historicalSignificance": "Dedicated to Goddess Meenakshi (a form of Parvati) and Sundareswarar (Shiva). Features the renowned Hall of Thousand Pillars (Ayiram Kaal Mandapam) carved from single granite stone blocks with musical resonance.",
-    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Meenakshi_Amman_Temple.jpg",
+    "thumbnailUrl": import.meta.env.BASE_URL + 'assets/landmark-meenakshi-temple.jpg',
     "panoramicSceneId": "meenakshi-360",
     "category": "Temple",
     "keyHighlights": [
@@ -165,7 +165,7 @@ export const HERITAGE_LANDMARKS: Landmark[] = [
     "architecturalStyle": "Kalinga Architecture (Khondalite Stone Colossus)",
     "description": "A colossal 13th-century stone temple conceived as the gigantic chariot of Surya, the Sun God. Fitted with 24 intricately carved stone wheels drawn by seven spirited horses, situated by the Bay of Bengal.",
     "historicalSignificance": "UNESCO World Heritage Site built by King Narasimhadeva I of the Eastern Ganga Dynasty. The wheels function as precise sundials, capable of calculating time down to minutes using cast shadows.",
-    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/9/97/Konark_Sun_Temple.jpg",
+    "thumbnailUrl": import.meta.env.BASE_URL + 'assets/landmark-konark-sun-temple.jpg',
     "panoramicSceneId": "konark-360",
     "category": "Temple",
     "keyHighlights": [
@@ -281,7 +281,7 @@ export const HERITAGE_LANDMARKS: Landmark[] = [
     "architecturalStyle": "Indo-Islamic Tower Architecture (Red Sandstone and Marble)",
     "description": "Qutub Minar rises as one of the finest examples of early Indo-Islamic architecture, built in five distinct storeys with intricate calligraphy, geometric motifs, and decorative inlay work.",
     "historicalSignificance": "A UNESCO World Heritage Site and one of Delhi’s most iconic ancient monuments, representing the arrival of Islamic architecture in the Indian subcontinent.",
-    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Qutb_Minar.jpg",
+    "thumbnailUrl": import.meta.env.BASE_URL + 'assets/landmark-qutub-minar.jpg',
     "category": "Monument",
     "keyHighlights": [
       "Five tapering storeys",
@@ -309,7 +309,7 @@ export const HERITAGE_LANDMARKS: Landmark[] = [
     "architecturalStyle": "Nagara Temple Architecture with Sculptural Ornamentation",
     "description": "The Khajuraho group of temples is renowned for their exceptional sculptural detail, expressive carvings, and elegant temple planning in the heart of Central India.",
     "historicalSignificance": "A UNESCO World Heritage Site, these temples celebrate artistic, spiritual, and philosophical traditions through a remarkable language of stone sculpture.",
-    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Khajuraho_Dulhadeo_Temple_2010.jpg",
+    "thumbnailUrl": import.meta.env.BASE_URL + 'assets/landmark-khajuraho-temples.jpg',
     "category": "Temple",
     "keyHighlights": [
       "Temple complex with diverse deities",
@@ -337,7 +337,7 @@ export const HERITAGE_LANDMARKS: Landmark[] = [
     "architecturalStyle": "Buddhist Stupa Architecture with Toranas",
     "description": "Sanchi Stupa is one of the oldest and most revered Buddhist monuments in India, marked by its hemispherical dome, carved gateways, and sacred meditative calm.",
     "historicalSignificance": "A UNESCO World Heritage Site, it stands as a key early monument of Buddhist architecture and the spread of Buddhist thought through the subcontinent.",
-    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Sanchi_Stupa.jpg",
+    "thumbnailUrl": import.meta.env.BASE_URL + 'assets/landmark-sanchi-stupa.jpg',
     "category": "Stupa",
     "keyHighlights": [
       "Buddhist relic chamber",
@@ -365,7 +365,7 @@ export const HERITAGE_LANDMARKS: Landmark[] = [
     "architecturalStyle": "Indo-Saracenic Triumphal Architecture",
     "description": "The Gateway of India stands on the waterfront of Mumbai as an enduring monument of colonial-era architecture and a symbol of India’s movement into a new chapter of history.",
     "historicalSignificance": "It commemorates the visit of King George V and Queen Mary, and later became a symbolic departure point for British rule in India.",
-    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Gateway_of_India_2015.jpg",
+    "thumbnailUrl": import.meta.env.BASE_URL + 'assets/landmark-gateway-of-india.jpg',
     "category": "Memorial",
     "keyHighlights": [
       "Waterfront architecture",
@@ -393,7 +393,7 @@ export const HERITAGE_LANDMARKS: Landmark[] = [
     "architecturalStyle": "Vijayanagara Ruins & Temple Architecture",
     "description": "Hampi was once the imperial capital of the Vijayanagara Empire, spread across a vast granite landscape of temples, royal enclosures, bazaar streets, and sacred tanks.",
     "historicalSignificance": "A UNESCO World Heritage Site, Hampi is one of India’s greatest archaeological landscapes and a living reminder of the grandeur of the Deccan kingdoms.",
-    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Hampi_virupaksha_temple_1.jpg",
+    "thumbnailUrl": import.meta.env.BASE_URL + 'assets/landmark-hampi.jpg',
     "category": "Temple",
     "keyHighlights": [
       "Vijayanagara imperial ruins",
@@ -421,7 +421,7 @@ export const HERITAGE_LANDMARKS: Landmark[] = [
     "architecturalStyle": "Indo-Saracenic Palace Architecture with Gothic Influences",
     "description": "Mysore Palace, one of the largest palaces in India, is celebrated for its grand halls, bright domes, and regal ceremonial spaces rich with royal heritage.",
     "historicalSignificance": "The palace remains a living symbol of the Wadiyar dynasty and a major center of royal tradition, culture, and public celebration in Karnataka.",
-    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Mysore_Palace.jpg",
+    "thumbnailUrl": import.meta.env.BASE_URL + 'assets/landmark-mysore-palace.jpg',
     "category": "Fort & Palace",
     "keyHighlights": [
       "Grand ceremonial halls",

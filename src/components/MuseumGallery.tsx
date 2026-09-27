@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { MUSEUM_ARTIFACTS } from '../data/artifactsData';
+import { setHeritageImageFallback } from '../data/artwork';
 import { MuseumArtifact } from '../types/heritage';
 import { 
   Sparkles, 
@@ -196,6 +197,7 @@ export const MuseumGallery: React.FC<MuseumGalleryProps> = ({ onSelectState }) =
                   alt={artifact.name}
                   className="w-full h-full object-cover pointer-events-none"
                   referrerPolicy="no-referrer"
+                  onError={(event) => setHeritageImageFallback(event.currentTarget, artifact.name, artifact.category)}
                 />
 
                 {/* Shimmering Gold Specular Highlight simulating rotating museum light */}
@@ -339,6 +341,7 @@ export const MuseumGallery: React.FC<MuseumGalleryProps> = ({ onSelectState }) =
                       alt={item.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       referrerPolicy="no-referrer"
+                      onError={(event) => setHeritageImageFallback(event.currentTarget, item.name, item.category)}
                     />
                   </div>
                   <div>

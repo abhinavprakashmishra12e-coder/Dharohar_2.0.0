@@ -1,3 +1,13 @@
+function escapeXmlText(value: string): string {
+  return value.replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&apos;',
+  })[character] ?? character);
+}
+
 export function heritageArtwork(
   title: string,
   subtitle: string,
@@ -5,6 +15,9 @@ export function heritageArtwork(
   secondary = '#fbbf24',
   accent = '#f8fafc'
 ): string {
+  const titleFontSize = Math.min(42, 1120 / title.length);
+  const safeTitle = escapeXmlText(title);
+  const safeSubtitle = escapeXmlText(subtitle);
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
       <defs>
@@ -28,10 +41,17 @@ export function heritageArtwork(
         <path d="M480 128 L480 82 L520 82 L520 128" fill="none" stroke="${accent}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
         <circle cx="270" cy="52" r="18" fill="${secondary}" opacity="0.9"/>
       </g>
-      <text x="82" y="88" fill="${accent}" font-size="42" font-weight="700" font-family="Segoe UI, Arial, sans-serif">${title}</text>
-      <text x="82" y="126" fill="${accent}" opacity="0.78" font-size="22" font-weight="500" font-family="Segoe UI, Arial, sans-serif">${subtitle}</text>
+      <text x="82" y="88" fill="${accent}" font-size="${titleFontSize}" font-weight="700" font-family="Segoe UI, Arial, sans-serif">${safeTitle}</text>
+      <text x="82" y="126" fill="${accent}" opacity="0.78" font-size="22" font-weight="500" font-family="Segoe UI, Arial, sans-serif">${safeSubtitle}</text>
     </svg>
   `;
 
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
+
+export function setHeritageImageFallback(image: HTMLImageElement, title: string, subtitle: string): void {
+  if (image.dataset.fallback === 'true') return;
+  image.dataset.fallback = 'true';
+  image.style.objectFit = 'contain';
+  image.src = heritageArtwork(title, subtitle);
 }
