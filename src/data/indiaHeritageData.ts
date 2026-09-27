@@ -134,7 +134,7 @@ export const INDIAN_STATES: StateHeritage[] = [
       "hover": "#5eead4",
       "border": "#14b8a6"
     },
-    "culturalSummary": "Devbhoomi sheltering the sacred Char Dham (Kedarnath, Badrinath, Gangotri, Yamunotri), holy Rishikesh yoga sanctuaries, and pristine Nanda Devi alpine sanctuaries.",
+    "culturalSummary": "Devbhoomi sheltering the sacred Char Dham (Kedarnath, Badrinath, Gangotri, Yamunotri), Haridwar’s Ganga pilgrimage and Kumbh Mela, Rishikesh yoga sanctuaries, and pristine Nanda Devi alpine sanctuaries.",
     "unescoSites": [
       "Nanda Devi and Valley of Flowers National Parks"
     ],
@@ -163,6 +163,10 @@ export const INDIAN_STATES: StateHeritage[] = [
     ],
     "historicalEra": "Katyuri Dynasty, Chand and Panwar Kings of Garhwal & Kumaon",
     "keyMonuments": [
+      "Har Ki Pauri, Haridwar",
+      "Mansa Devi Temple, Haridwar",
+      "Chandi Devi Temple, Haridwar",
+      "Daksheshwar Mahadev Temple, Kankhal",
       "Kedarnath Temple",
       "Badrinath Temple",
       "Rishikesh Parmarth Niketan",

@@ -42,7 +42,7 @@ export interface Landmark {
   historicalSignificance: string;
   thumbnailUrl: string;
   panoramicSceneId?: string;
-  category: 'Temple' | 'Mausoleum' | 'Fort & Palace' | 'Cave & Rock-Cut' | 'Memorial' | 'Sacred Ghat' | 'Stupa';
+  category: 'Temple' | 'Mausoleum' | 'Fort & Palace' | 'Cave & Rock-Cut' | 'Memorial' | 'Sacred Ghat' | 'Stupa' | 'Sufi Shrine' | 'Nature Reserve';
   keyHighlights: string[];
   elevationMeters: number;
 }

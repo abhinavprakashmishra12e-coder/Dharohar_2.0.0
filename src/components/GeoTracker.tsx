@@ -31,12 +31,12 @@ export const GeoTracker: React.FC<GeoTrackerProps> = ({
   onLaunchLandmark360,
   onLocateOnMap,
 }) => {
-  // Current user GPS position (defaulting to New Delhi)
+  // Start from Haridwar so the nearby heritage directory is useful immediately.
   const [currentLocation, setCurrentLocation] = useState<GeoCoordinates>({
-    lat: 28.6139,
-    lng: 77.2090,
+    lat: 29.9562,
+    lng: 78.1710,
   });
-  const [locationName, setLocationName] = useState<string>('New Delhi (Central India)');
+  const [locationName, setLocationName] = useState<string>('Haridwar (Har Ki Pauri)');
   const [isLocating, setIsLocating] = useState<boolean>(false);
   const [locationError, setLocationError] = useState<string | null>(null);
   const [selectedLandmarkId, setSelectedLandmarkId] = useState<string | null>(null);
@@ -78,6 +78,7 @@ export const GeoTracker: React.FC<GeoTrackerProps> = ({
   );
 
   const nearest = sortedLandmarks[0];
+  const radarRangeKm = locationName.startsWith('Haridwar') ? 60 : 2200;
 
   return (
     <div className="w-full min-h-[calc(100vh-4rem)] text-slate-800 p-4 sm:p-6 lg:p-8">
@@ -191,8 +192,7 @@ export const GeoTracker: React.FC<GeoTrackerProps> = ({
 
               {/* Landmark Blips on Radar */}
               {sortedLandmarks.map((info) => {
-                const maxDist = 2200;
-                const normalizedRadius = Math.min(1, info.distanceKm / maxDist) * 115;
+                const normalizedRadius = Math.sqrt(Math.min(1, info.distanceKm / radarRangeKm)) * 115;
                 const rad = ((info.bearingDeg - 90) * Math.PI) / 180;
                 const bx = 144 + normalizedRadius * Math.cos(rad);
                 const by = 144 + normalizedRadius * Math.sin(rad);
@@ -227,7 +227,7 @@ export const GeoTracker: React.FC<GeoTrackerProps> = ({
                 <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
                 <span>Heritage Monuments</span>
               </div>
-              <span className="text-amber-700 font-mono font-semibold">Range: 2,200 km</span>
+              <span className="text-amber-700 font-mono font-semibold">Range: {radarRangeKm.toLocaleString()} km</span>
             </div>
           </div>
 

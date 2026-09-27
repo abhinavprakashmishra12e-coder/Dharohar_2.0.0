@@ -641,6 +641,22 @@ export const IndiaReliefMap: React.FC<IndiaReliefMapProps> = ({
                     <circle cx="0" cy="-12" r="3.5" fill="#ffffff" stroke="#94a3b8" strokeWidth="0.8" />
                     <title>Victoria Memorial, Kolkata (Click for 360° Tour)</title>
                   </g>
+
+                  <g
+                    id="mini-haridwar"
+                    transform="translate(286, 190)"
+                    className="cursor-pointer group"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      const uttarakhand = INDIAN_STATES.find((state) => state.id === 'uttarakhand');
+                      if (uttarakhand) onSelectState(uttarakhand);
+                    }}
+                  >
+                    <circle cx="0" cy="0" r="8" fill="#0f766e" stroke="#ccfbf1" strokeWidth="1.5" />
+                    <circle cx="0" cy="0" r="3" fill="#fbbf24" />
+                    <path d="M -12 10 Q 0 6 12 10" fill="none" stroke="#0284c7" strokeWidth="2" strokeLinecap="round" />
+                    <title>Haridwar and nearby heritage, Uttarakhand</title>
+                  </g>
                 </g>
               )}
 

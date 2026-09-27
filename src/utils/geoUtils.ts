@@ -90,6 +90,7 @@ export function getLandmarksSortedByDistance(
 }
 
 export const PRESET_USER_LOCATIONS: { name: string; label: string; coords: GeoCoordinates }[] = [
+  { name: 'haridwar', label: 'Haridwar (Har Ki Pauri)', coords: { lat: 29.9562, lng: 78.1710 } },
   { name: 'delhi', label: 'New Delhi (Rashtrapati Bhavan)', coords: { lat: 28.6143, lng: 77.1994 } },
   { name: 'mumbai', label: 'Mumbai (Marine Drive)', coords: { lat: 18.9440, lng: 72.8238 } },
   { name: 'bengaluru', label: 'Bengaluru (Vidhana Soudha)', coords: { lat: 12.9791, lng: 77.5913 } },
