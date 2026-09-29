@@ -1,28 +1,26 @@
 import { lazy, Suspense, useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeritageHome } from './components/HeritageHome';
-import { HeritageTrail } from './components/HeritageTrail';
-import { HeritageAgent } from './components/HeritageAgent';
-import { StateDetailModal } from './components/StateDetailModal';
+const StateDetailModal = lazy(() => import('./components/StateDetailModal').then(m => ({ default: m.StateDetailModal })));
 import type { StateHeritage, Landmark } from './types/heritage';
-import { INDIAN_STATES } from './data/indiaHeritageData';
-import { HERITAGE_LANDMARKS } from './data/landmarksData';
 import './heritage.css';
 import './heritage-trail.css';
 const VirtualTour360 = lazy(() => import('./components/VirtualTour360').then(m => ({ default: m.VirtualTour360 })));
 const GeoTracker = lazy(() => import('./components/GeoTracker').then(m => ({ default: m.GeoTracker })));
 const MuseumGallery = lazy(() => import('./components/MuseumGallery').then(m => ({ default: m.MuseumGallery })));
+const HeritageTrail = lazy(() => import('./components/HeritageTrail').then(m => ({ default: m.HeritageTrail })));
+const HeritageAgent = lazy(() => import('./components/HeritageAgent').then(m => ({ default: m.HeritageAgent })));
 
 export default function App() {
   const [activeView, setActiveView] = useState<'map' | 'tour' | 'radar' | 'museum' | 'trail' | 'agent'>('map');
   const [activeTourSceneId, setActiveTourSceneId] = useState('taj-mahal-360');
   const [selectedStateForModal, setSelectedStateForModal] = useState<StateHeritage | null>(null);
   const launch = (landmark: Landmark) => { setActiveTourSceneId(landmark.panoramicSceneId ?? landmark.id); setSelectedStateForModal(null); setActiveView('tour'); window.scrollTo({ top: 0, behavior: 'instant' }); };
-  const state = (id: string) => { const found = INDIAN_STATES.find(s => s.id === id); if (found) setSelectedStateForModal(found); };
+  const state = async (id: string) => { const { INDIAN_STATES } = await import('./data/indiaHeritageData'); const found = INDIAN_STATES.find(s => s.id === id); if (found) setSelectedStateForModal(found); };
   const navigate = (view: typeof activeView) => { setSelectedStateForModal(null); setActiveView(view); window.scrollTo({ top: 0, behavior: 'instant' }); };
   return <div className="dharohar-app">
     <a href="#main-content" className="skip-link">Skip to content</a>
-    <Navbar activeView={activeView} setActiveView={navigate} onSelectState={state} onSelectLandmark={id => { const item = HERITAGE_LANDMARKS.find(l => l.id === id); if (item) launch(item); }}/>
+    <Navbar activeView={activeView} setActiveView={navigate} onSelectState={state} onSelectLandmark={launch}/>
     <main id="main-content">
       <Suspense fallback={<div className="page-loading" role="status">Opening your next discovery…</div>}>
         {activeView === 'map' && <HeritageHome onSelectState={setSelectedStateForModal} onLaunchLandmark360={launch} onOpenRadar={() => navigate('radar')}/>} 
@@ -33,6 +31,6 @@ export default function App() {
         {activeView === 'agent' && <HeritageAgent />}
       </Suspense>
     </main>
-    {selectedStateForModal && <StateDetailModal state={selectedStateForModal} onClose={() => setSelectedStateForModal(null)} onLaunchLandmark360={launch}/>} 
+    {selectedStateForModal && <Suspense fallback={<div className="page-loading" role="status">Opening heritage details…</div>}><StateDetailModal state={selectedStateForModal} onClose={() => setSelectedStateForModal(null)} onLaunchLandmark360={launch}/></Suspense>} 
   </div>;
 }

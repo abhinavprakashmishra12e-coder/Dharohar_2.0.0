@@ -16,7 +16,8 @@ export function PhotoSphere({ url, title }: { url: string; title: string }) {
     try { renderer = new THREE.WebGLRenderer({ antialias: true }); }
     catch { setStatus('This device cannot display WebGL panoramas. Use the external tour link instead.'); return; }
     let disposed = false, frame = 0;
-    let yaw = 0, pitch = 0, dragging = false, lastX = 0, lastY = 0, previousTime = 0;
+    let yaw = 0, pitch = 0, dragging = false, activePointerId: number | null = null, pinchDistance = 0, previousTime = 0;
+    const pointers = new Map<number, { x: number; y: number }>();
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(70, 1, 0.1, 1100);
     const geometry = new THREE.SphereGeometry(500, 64, 40);
@@ -26,7 +27,7 @@ export function PhotoSphere({ url, title }: { url: string; title: string }) {
     renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
     renderer.domElement.tabIndex = 0;
     renderer.domElement.setAttribute('aria-label', `${title}. Drag to look around. Arrow keys rotate; plus and minus zoom.`);
-    renderer.domElement.style.touchAction = 'none';
+    renderer.domElement.style.touchAction = 'pan-y';
     host.appendChild(renderer.domElement);
     const texture = new THREE.TextureLoader().load(url, (loaded) => {
       if (disposed) { loaded.dispose(); return; }
@@ -42,9 +43,45 @@ export function PhotoSphere({ url, title }: { url: string; title: string }) {
     const zoom = (amount: number) => { camera.fov = THREE.MathUtils.clamp(camera.fov + amount, 35, 95); camera.updateProjectionMatrix(); };
     api.current = { zoom };
     const canvas = renderer.domElement;
-    const down = (event: PointerEvent) => { dragging = true; lastX = event.clientX; lastY = event.clientY; canvas.setPointerCapture(event.pointerId); };
-    const move = (event: PointerEvent) => { if (!dragging) return; yaw -= (event.clientX - lastX) * .2; pitch += (event.clientY - lastY) * .2; lastX = event.clientX; lastY = event.clientY; };
-    const up = () => { dragging = false; };
+    const down = (event: PointerEvent) => {
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      canvas.setPointerCapture(event.pointerId);
+      if (pointers.size === 1) {
+        activePointerId = event.pointerId;
+        dragging = true;
+      } else {
+        dragging = false;
+        const [first, second] = [...pointers.values()];
+        pinchDistance = Math.hypot(second.x - first.x, second.y - first.y);
+      }
+    };
+    const move = (event: PointerEvent) => {
+      if (!pointers.has(event.pointerId)) return;
+      const previous = pointers.get(event.pointerId)!;
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      if (pointers.size >= 2) {
+        const [first, second] = [...pointers.values()];
+        const nextDistance = Math.hypot(second.x - first.x, second.y - first.y);
+        if (pinchDistance) zoom((pinchDistance - nextDistance) * .12);
+        pinchDistance = nextDistance;
+        return;
+      }
+      if (!dragging || event.pointerId !== activePointerId) return;
+      yaw -= (event.clientX - previous.x) * .2;
+      pitch += (event.clientY - previous.y) * .2;
+    };
+    const up = (event: PointerEvent) => {
+      pointers.delete(event.pointerId);
+      pinchDistance = 0;
+      if (pointers.size === 1) {
+        const [[pointerId, point]] = [...pointers.entries()];
+        activePointerId = pointerId;
+        dragging = true;
+      } else {
+        dragging = false;
+        activePointerId = null;
+      }
+    };
     const wheel = (event: WheelEvent) => { event.preventDefault(); zoom(event.deltaY * .03); };
     const key = (event: KeyboardEvent) => {
       if (!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','-','='].includes(event.key)) return;
@@ -58,7 +95,7 @@ export function PhotoSphere({ url, title }: { url: string; title: string }) {
     };
     const contextLost = (event: Event) => { event.preventDefault(); setStatus('The graphics connection was interrupted. Reopen this monument or use the external tour.'); };
     canvas.addEventListener('pointerdown', down); canvas.addEventListener('pointermove', move);
-    canvas.addEventListener('pointerup', up); canvas.addEventListener('pointercancel', up);
+    canvas.addEventListener('pointerup', up); canvas.addEventListener('pointercancel', up); canvas.addEventListener('lostpointercapture', up);
     canvas.addEventListener('wheel', wheel, { passive: false }); canvas.addEventListener('keydown', key);
     canvas.addEventListener('webglcontextlost', contextLost);
     const size = () => { const { width, height } = host.getBoundingClientRect(); if (!width || !height) return; renderer.setSize(width, height); camera.aspect = width / height; camera.updateProjectionMatrix(); };
@@ -78,7 +115,7 @@ export function PhotoSphere({ url, title }: { url: string; title: string }) {
     return () => {
       disposed = true; cancelAnimationFrame(frame); observer.disconnect(); api.current = null;
       canvas.removeEventListener('pointerdown', down); canvas.removeEventListener('pointermove', move);
-      canvas.removeEventListener('pointerup', up); canvas.removeEventListener('pointercancel', up);
+      canvas.removeEventListener('pointerup', up); canvas.removeEventListener('pointercancel', up); canvas.removeEventListener('lostpointercapture', up);
       canvas.removeEventListener('wheel', wheel); canvas.removeEventListener('keydown', key);
       canvas.removeEventListener('webglcontextlost', contextLost);
       texture.dispose(); material.dispose(); geometry.dispose(); renderer.dispose(); canvas.remove();

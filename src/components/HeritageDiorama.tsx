@@ -240,6 +240,7 @@ export function HeritageDiorama({
     camera.position.set(0, 26, 27);
     camera.lookAt(0, 0, 0);
     const controls = new OrbitControls(camera, canvas);
+    canvas.style.touchAction = 'pan-y';
     controlsRef.current = controls;
     controls.enableDamping = true;
     controls.dampingFactor = 0.08;
@@ -288,7 +289,7 @@ export function HeritageDiorama({
     INDIAN_STATES.forEach((state) => {
       try {
         const parsed = loader.parse(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 775 800"><path d="${state.svgPath}"/></svg>`);
-        const shapes = parsed.paths.flatMap((path) => SVGLoader.createShapes(path)).map(simplifiedShape);
+        const shapes = parsed.paths.flatMap((path) => path.toShapes()).map(simplifiedShape);
         const group = new THREE.Group();
         group.userData.stateId = state.id;
         shapes.forEach((shape) => {
@@ -489,11 +490,11 @@ export function HeritageDiorama({
 
   return (
     <div ref={rootRef} style={{ position: 'absolute', inset: 0, overflow: 'hidden', background: 'transparent', pointerEvents: 'none' }}>
-      <canvas ref={canvasRef} aria-label="Interactive stylized 3D diorama of India's heritage map" role="img" style={{ display: 'block', width: '100%', height: '100%', touchAction: 'none', pointerEvents: 'auto' }} />
+      <canvas ref={canvasRef} aria-label="Interactive stylized 3D diorama of India's heritage map" role="img" style={{ display: 'block', width: '100%', height: '100%', touchAction: 'pan-y', pointerEvents: 'auto' }} />
       <div aria-label="Featured monuments" style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 4 }}>
         {FEATURED.map((featured) => (
           <div key={featured.id} ref={(node) => { calloutRefs.current[featured.id] = node; }} style={{ position: 'absolute', left: 0, top: 0, pointerEvents: 'none', transition: 'opacity 180ms ease' }}>
-            <button type="button" aria-label={`Explore ${featured.label}`} onClick={() => callbacks.current.onSelectLandmark(featured.id)} style={{ minHeight: 42, maxWidth: 176, padding: '9px 13px', borderRadius: 999, border: '1px solid rgba(255,255,255,.9)', background: 'rgba(255,255,255,.93)', color: '#244052', font: '600 12px/1.15 system-ui,sans-serif', boxShadow: '0 7px 20px rgba(35,83,104,.18)', cursor: 'pointer', pointerEvents: 'auto', whiteSpace: 'nowrap' }}>{featured.label}</button>
+            <button type="button" aria-label={`Explore ${featured.label}`} onClick={() => callbacks.current.onSelectLandmark(featured.id)} style={{ minHeight: 44, maxWidth: 176, padding: '9px 13px', borderRadius: 999, border: '1px solid rgba(255,255,255,.9)', background: 'rgba(255,255,255,.93)', color: '#244052', font: '600 12px/1.15 system-ui,sans-serif', boxShadow: '0 7px 20px rgba(35,83,104,.18)', cursor: 'pointer', pointerEvents: 'auto', whiteSpace: 'nowrap' }}>{featured.label}</button>
           </div>
         ))}
       </div>

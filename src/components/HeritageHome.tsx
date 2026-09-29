@@ -1,6 +1,5 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowRight, ArrowUpRight, Compass, Layers, Play, RotateCcw, SkipForward, Sparkles } from 'lucide-react';
-import { INDIAN_STATES } from '../data/indiaHeritageData';
 import { HERITAGE_LANDMARKS } from '../data/landmarksData';
 import { FEATURED_IDS } from '../data/tourSources';
 import { setHeritageImageFallback } from '../data/artwork';
@@ -12,21 +11,45 @@ let openingSeen = false;
 export function HeritageHome({ onSelectState, onLaunchLandmark360, onOpenRadar }: { onSelectState: (s: StateHeritage) => void; onLaunchLandmark360: (l: Landmark) => void; onOpenRadar: () => void }) {
   const [classic, setClassic] = useState(false);
   const [unavailable, setUnavailable] = useState(false);
+  const [mapNearViewport, setMapNearViewport] = useState(false);
   const [replayKey, setReplayKey] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   const [intro, setIntro] = useState(!openingSeen && !reducedMotion);
   const [skip, setSkip] = useState(openingSeen || reducedMotion);
   const destinations = useRef<HTMLElement>(null);
+  const dioramaStage = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
     const change = () => setReducedMotion(media.matches);
     media.addEventListener('change', change);
     return () => media.removeEventListener('change', change);
   }, []);
+  useEffect(() => {
+    const stage = dioramaStage.current;
+    if (!stage) {
+      setMapNearViewport(true);
+      return;
+    }
+    const checkProximity = () => {
+      const bounds = stage.getBoundingClientRect();
+      if (bounds.top <= window.innerHeight + 160 && bounds.bottom >= -160) {
+        setMapNearViewport(true);
+        window.removeEventListener('scroll', checkProximity);
+        window.removeEventListener('resize', checkProximity);
+      }
+    };
+    window.addEventListener('scroll', checkProximity, { passive: true });
+    window.addEventListener('resize', checkProximity);
+    checkProximity();
+    return () => {
+      window.removeEventListener('scroll', checkProximity);
+      window.removeEventListener('resize', checkProximity);
+    };
+  }, []);
   const finish = () => { openingSeen = true; setIntro(false); };
   const replay = () => { setClassic(false); setSkip(false); setIntro(!reducedMotion); setReplayKey(n => n + 1); };
   const launch = (id: string) => { const item = HERITAGE_LANDMARKS.find(l => l.id === id); if (item) onLaunchLandmark360(item); };
-  const selectState = (id: string) => { const state = INDIAN_STATES.find(s => s.id === id); if (state) onSelectState(state); };
+  const selectState = async (id: string) => { const { INDIAN_STATES } = await import('../data/indiaHeritageData'); const state = INDIAN_STATES.find(s => s.id === id); if (state) onSelectState(state); };
 
   return <div className="heritage-home">
     <section className={`heritage-hero ${intro ? 'intro-playing' : ''}`}>
@@ -42,8 +65,8 @@ export function HeritageHome({ onSelectState, onLaunchLandmark360, onOpenRadar }
       </div>
       <div className="hero-map-column">
         <div className="map-eyebrow"><span><Sparkles size={14}/> THE LIVING ATLAS</span><span>EXPLORE IN 3D</span></div>
-        <div className="diorama-stage">
-          {unavailable ? <div className="map-fallback"><Compass size={46} strokeWidth={1}/><h2>Your journey still begins here.</h2><p>This device could not load the 3D map. The state explorer and monument tours are still available.</p><button className="primary-button" onClick={() => setClassic(true)}>Open state explorer <ArrowRight size={16}/></button></div> : <Suspense fallback={<div className="map-loading" role="status"><Compass size={32}/><span>Preparing your journey…</span></div>}><HeritageDiorama replayKey={replayKey} skipIntro={skip} reducedMotion={reducedMotion} onIntroEnd={finish} onSelectLandmark={launch} onSelectState={selectState} onUnavailable={() => { setUnavailable(true); finish(); }}/></Suspense>}
+        <div className="diorama-stage" ref={dioramaStage}>
+          {unavailable ? <div className="map-fallback"><Compass size={46} strokeWidth={1}/><h2>Your journey still begins here.</h2><p>This device could not load the 3D map. The state explorer and monument tours are still available.</p><button className="primary-button" onClick={() => setClassic(true)}>Open state explorer <ArrowRight size={16}/></button></div> : mapNearViewport ? <Suspense fallback={<div className="map-loading" role="status"><Compass size={32}/><span>Preparing your journey…</span></div>}><HeritageDiorama replayKey={replayKey} skipIntro={skip} reducedMotion={reducedMotion} onIntroEnd={finish} onSelectLandmark={launch} onSelectState={selectState} onUnavailable={() => { setUnavailable(true); finish(); }}/></Suspense> : <div className="map-loading" role="status"><Compass size={32}/><span>Your map is ready when you are…</span></div>}
           <div className="map-top-actions">{intro ? <button onClick={() => { setSkip(true); finish(); }}><SkipForward size={14}/> Skip opening</button> : <button onClick={replay}><RotateCcw size={14}/> Replay opening</button>}</div>
           {intro && <div className="intro-caption" role="status"><span>WELCOME TO INDIA</span><p>A journey through living heritage</p><div className="intro-progress"/></div>}
           <span className="map-north" aria-hidden="true">N<br/>↑</span>

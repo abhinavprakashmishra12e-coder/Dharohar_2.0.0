@@ -325,7 +325,20 @@ export const IndiaReliefMap: React.FC<IndiaReliefMapProps> = ({
                       key={state.id}
                       className="cursor-pointer transition-all duration-300 group"
                       onMouseEnter={() => setHoveredStateId(state.id)}
-                      onClick={() => onSelectState(state)}
+                      onClick={() => {
+                        setHoveredStateId(state.id);
+                        onSelectState(state);
+                      }}
+                      onKeyDown={(event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                          event.preventDefault();
+                          setHoveredStateId(state.id);
+                          onSelectState(state);
+                        }
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`Open ${state.name} heritage details`}
                       style={{
                         transformOrigin: `${state.center.x}px ${state.center.y}px`,
                         transform: isHovered
