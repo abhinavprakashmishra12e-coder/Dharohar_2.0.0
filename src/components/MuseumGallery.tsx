@@ -126,18 +126,18 @@ export const MuseumGallery: React.FC<MuseumGalleryProps> = ({ onSelectState }) =
           <div className="lg:col-span-7 glass-panel-gold rounded-3xl p-6 flex flex-col items-center justify-between relative overflow-hidden min-h-[540px] bg-white/85 border border-sky-200 shadow-xl">
             
             {/* Top Stage Controls */}
-            <div className="w-full flex items-center justify-between z-10">
+            <div className="w-full flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 z-10">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-amber-500/15 text-amber-800 border border-amber-500/30">
+                <span className="shrink-0 text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-amber-500/15 text-amber-800 border border-amber-500/30">
                   {artifact.dynasty}
                 </span>
-                <span className="text-xs text-slate-500 font-mono">
+                <span className="text-xs text-slate-500 font-mono whitespace-nowrap">
                   {artifact.circa}
                 </span>
               </div>
 
               {/* Audio guide & Zoom controls */}
-              <div className="flex items-center gap-2">
+              <div className="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-2">
                 <button
                   onClick={toggleAudioGuide}
                   className={`px-3 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition-all shadow-sm ${

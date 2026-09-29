@@ -265,7 +265,7 @@ export const GeoTracker: React.FC<GeoTrackerProps> = ({
             </p>
 
             {/* Travel Times & Key Specs */}
-            <div className="grid grid-cols-3 gap-3 my-5">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 my-5">
               <div className="p-3 rounded-xl bg-white border border-sky-200/80 shadow-sm flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-sky-100 text-sky-700 flex items-center justify-center shrink-0">
                   <Plane className="w-4 h-4" />
